@@ -7,18 +7,20 @@ import (
 	"strings"
 )
 
+var (
+	rock     = "A"
+	paper    = "B"
+	scissors = "C"
+
+	myRock     = "X"
+	myPaper    = "Y"
+	myScissors = "Z"
+)
+
 func main() {
 	input, _ := os.Open("input.csv")
 	defer input.Close()
 	sc := bufio.NewScanner(input)
-
-	rock := "A"
-	paper := "B"
-	scissors := "C"
-
-	myRock := "X"
-	myPaper := "Y"
-	myScissors := "Z"
 
 	totalScore := 0
 
