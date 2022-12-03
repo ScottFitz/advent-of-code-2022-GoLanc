@@ -16,9 +16,9 @@ func main() {
 	paper := "B"
 	scissors := "C"
 
-	myRock := "X"
-	myPaper := "Y"
-	myScissors := "Z"
+	lose := "X"
+	draw := "Y"
+	win := "Z"
 	totalScore := 0
 
 	for sc.Scan() {
@@ -26,35 +26,35 @@ func main() {
 		strategy := strings.Split(sc.Text(), " ")
 		if len(strategy) > 1 {
 			theirChoice := strategy[0]
-			myChoice := strategy[1]
+			endResult := strategy[1]
 
 			switch theirChoice {
 			case rock:
-				switch myChoice {
-				case myRock:
-					totalScore += 4
-				case myPaper:
-					totalScore += 8
-				case myScissors:
+				switch endResult {
+				case lose:
 					totalScore += 3
+				case draw:
+					totalScore += 4
+				case win:
+					totalScore += 8
 				}
 			case paper:
-				switch myChoice {
-				case myRock:
+				switch endResult {
+				case lose:
 					totalScore += 1
-				case myPaper:
+				case draw:
 					totalScore += 5
-				case myScissors:
+				case win:
 					totalScore += 9
 				}
 			case scissors:
-				switch myChoice {
-				case myRock:
-					totalScore += 7
-				case myPaper:
+				switch endResult {
+				case lose:
 					totalScore += 2
-				case myScissors:
+				case draw:
 					totalScore += 6
+				case win:
+					totalScore += 7
 				}
 			}
 		}
