@@ -69,8 +69,7 @@ func getPriorityValue(s string) int {
 	res := slices.Index(ucAlphabet, s)
 	if res != -1 {
 		return res + 27
-	} else {
-		res = slices.Index(lcAlphabet, s)
-		return res + 1
 	}
+	res = slices.Index(lcAlphabet, s)
+	return res + 1
 }

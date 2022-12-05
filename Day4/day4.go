@@ -17,7 +17,7 @@ func main() {
 
 	for sc.Scan() {
 		assignmentStr := strings.Split(sc.Text(), ",")
-		assignments := createSliceOfInts(assignmentStr)
+		assignments := CreateSliceOfInts(assignmentStr)
 
 		// populate assignment ranges
 		var assign1Range []int
@@ -62,7 +62,7 @@ func fullyContains(s1 []int, s2 []int) bool {
 	return true
 }
 
-func createSliceOfInts(s []string) []int {
+func CreateSliceOfInts(s []string) []int {
 	var r []int
 	for _, v := range s {
 		theRange := strings.Split(v, "-")
